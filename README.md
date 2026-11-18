@@ -2,7 +2,6 @@
 
 多进程德州扑克项目的基础工程。当前已完成 Windows/Linux 可构建的 CMake 骨架、`poker_common` 基础层，以及 `poker_core` 的牌、牌堆、可复现随机数、5–7 张牌型评估器和完整下注状态机。底池结算、网络进程和 Agent 服务将在后续里程碑加入。
 
-完整设计见 [德州扑克多进程服务器与LLM_Poker_Agent_开发方案_v2.md](德州扑克多进程服务器与LLM_Poker_Agent_开发方案_v2.md)。
 
 ## 当前范围
 
