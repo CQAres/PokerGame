@@ -1,0 +1,31 @@
+# Build output
+build/
+out/
+cmake-build-*/
+CMakeUserPresets.json
+
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.sln
+*.vcxproj*
+
+# Runtime output
+logs/
+*.log
+*.jsonl
+*.csv
+
+# Local configuration
+config/local.json
+config/*.local.json
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Local planning documents (kept out of the repository)
+/德州扑克*.md

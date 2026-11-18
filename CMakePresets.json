@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows-msys2-base",
+      "hidden": true,
+      "displayName": "Windows MSYS2 MinGW-w64 base",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "environment": {
+        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/bin;$penv{PATH}"
+      },
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "C:/msys64/mingw64/bin/g++.exe",
+        "CMAKE_PREFIX_PATH": "C:/msys64/mingw64",
+        "POKER_BUILD_TESTS": "ON",
+        "POKER_BUILD_SIM": "ON"
+      }
+    },
+    {
+      "name": "windows-msys2-debug",
+      "inherits": "windows-msys2-base",
+      "displayName": "Windows MSYS2 MinGW-w64 Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-msys2-release",
+      "inherits": "windows-msys2-base",
+      "displayName": "Windows MSYS2 MinGW-w64 Release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "linux-debug",
+      "displayName": "Linux Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "POKER_BUILD_TESTS": "ON",
+        "POKER_BUILD_SIM": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-msys2-debug",
+      "configurePreset": "windows-msys2-debug"
+    },
+    {
+      "name": "windows-msys2-release",
+      "configurePreset": "windows-msys2-release"
+    },
+    {
+      "name": "linux-debug",
+      "configurePreset": "linux-debug"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "windows-msys2-debug",
+      "configurePreset": "windows-msys2-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "windows-msys2-release",
+      "configurePreset": "windows-msys2-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "linux-debug",
+      "configurePreset": "linux-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}
